@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 function ProductDetails({ addToCart }) {
@@ -33,7 +33,7 @@ function ProductDetails({ addToCart }) {
 
   // ================= REVIEWS =================
 
-  const fetchReviews = () => {
+  const fetchReviews = useCallback(() => {
     fetch(`http://localhost:5000/api/reviews/${id}`)
       .then((response) => response.json())
       .then((data) => {
@@ -42,11 +42,11 @@ function ProductDetails({ addToCart }) {
       .catch((error) => {
         console.error("Error fetching reviews:", error);
       });
-  };
+  }, [id]);
 
   useEffect(() => {
     fetchReviews();
-  }, [id]);
+  }, [fetchReviews]);
 
   // ================= ADD REVIEW =================
 
@@ -210,8 +210,7 @@ function ProductDetails({ addToCart }) {
               </span>
 
               <span className="ms-2 text-muted">
-                {averageRating} / 5
-                {" "}
+                {averageRating} / 5{" "}
                 ({reviews.length}{" "}
                 {reviews.length === 1
                   ? "review"
