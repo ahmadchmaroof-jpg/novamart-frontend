@@ -32,7 +32,7 @@ function MyOrders() {
       }
 
       const response = await fetch(
-        `http://localhost:5000/api/my-orders/${encodeURIComponent(
+        `https://ecommerence-backend-omega.vercel.app/api/my-orders/${encodeURIComponent(
           user.email
         )}`
       );
@@ -74,7 +74,7 @@ function MyOrders() {
       setDeletingId(orderId);
 
       const response = await fetch(
-        `http://localhost:5000/api/my-orders/${encodeURIComponent(
+        `https://ecommerence-backend-omega.vercel.app/api/my-orders/${encodeURIComponent(
           user.email
         )}/${orderId}`,
         {

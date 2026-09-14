@@ -67,7 +67,7 @@ function Cart({ cart, removeFromCart, setCart }) {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/orders",
+        "https://ecommerence-backend-omega.vercel.app/api/orders",
         {
           method: "POST",
           headers: {

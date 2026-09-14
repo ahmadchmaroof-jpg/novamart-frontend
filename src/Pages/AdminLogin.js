@@ -8,7 +8,7 @@ function AdminLogin() {
     e.preventDefault();
 
     const response = await fetch(
-      "http://localhost:5000/api/admin/login",
+      "https://ecommerence-backend-omega.vercel.app/api/admin/login",
       {
         method: "POST",
         headers: {

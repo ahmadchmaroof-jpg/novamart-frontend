@@ -19,7 +19,7 @@ function App() {
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/products?search=${search}`)
+    fetch(`https://ecommerence-backend-omega.vercel.app/api/products?search=${search}`)
       .then((response) => response.json())
       .then((data) => {
         setProducts(data);

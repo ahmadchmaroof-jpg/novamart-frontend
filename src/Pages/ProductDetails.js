@@ -17,7 +17,7 @@ function ProductDetails({ addToCart }) {
   // ================= PRODUCT =================
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/products`)
+    fetch(`https://ecommerence-backend-omega.vercel.app/api/products`)
       .then((response) => response.json())
       .then((data) => {
         const foundProduct = data.find(
@@ -34,7 +34,7 @@ function ProductDetails({ addToCart }) {
   // ================= REVIEWS =================
 
   const fetchReviews = useCallback(() => {
-    fetch(`http://localhost:5000/api/reviews/${id}`)
+    fetch(`https://ecommerence-backend-omega.vercel.app/api/reviews/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setReviews(data);
@@ -85,7 +85,7 @@ function ProductDetails({ addToCart }) {
       setReviewLoading(true);
 
       const response = await fetch(
-        "http://localhost:5000/api/reviews",
+        "https://ecommerence-backend-omega.vercel.app/api/reviews",
         {
           method: "POST",
           headers: {

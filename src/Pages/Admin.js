@@ -30,7 +30,7 @@ function Admin() {
       return;
     }
 
-    fetch("http://localhost:5000/api/products")
+    fetch("https://ecommerence-backend-omega.vercel.app/api/products")
       .then((response) => response.json())
       .then((data) => {
         setProducts(data);
@@ -51,7 +51,7 @@ function Admin() {
 
       try {
         const response = await fetch(
-          "http://localhost:5000/api/orders",
+          "https://ecommerence-backend-omega.vercel.app/api/orders",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -78,7 +78,7 @@ function Admin() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/orders/${orderId}/status`,
+        `https://ecommerence-backend-omega.vercel.app/api/orders/${orderId}/status`,
         {
           method: "PUT",
           headers: {
@@ -121,7 +121,7 @@ function Admin() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/products",
+        "https://ecommerence-backend-omega.vercel.app/api/products",
         {
           method: "POST",
           headers: {
@@ -163,7 +163,7 @@ function Admin() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/products/${id}`,
+        `https://ecommerence-backend-omega.vercel.app/api/products/${id}`,
         {
           method: "DELETE",
           headers: {
@@ -198,7 +198,7 @@ function Admin() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/products/${id}`,
+        `https://ecommerence-backend-omega.vercel.app/api/products/${id}`,
         {
           method: "PUT",
           headers: {
